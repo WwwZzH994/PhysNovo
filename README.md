@@ -20,12 +20,19 @@ conda activate physnovo
 ## Pretrained Models
 
 - Nine-Species Model：https://doi.org/10.5281/zenodo.20687570
+- Aggregated Model：https://doi.org/10.5281/zenodo.21355375
 - Non-Enzymatic Model：https://doi.org/10.5281/zenodo.20687690
+
+## Train
+
+```
+python main.py --mode=train --gpu=0,1 --config=./config.yaml --output=train.log --peak_path=./*.mgf --peak_path_val=./*.mgf
+```
 
 ## Validation
 
 ```
-python main.py --mode=eval --gpu=0 --config=./config.yaml --output=evaluate.log --peak_path=./*.mgf --model=the_path_of_your_model
+python main.py --mode=eval --gpu=0,1 --config=./config.yaml --output=evaluate.log --peak_path=./*.mgf --model=the_path_of_your_model
 ```
 
 
