@@ -304,7 +304,9 @@ class PeptideDecoder(_PeptideTransformer):
         
         # [Innovation 3]: Prefix-Mass Guidance Module
         if self.use_prefix_mass:
-            self.prefix_guidance = PrefixMassGuidance(dim_model, dropout=0.3)
+            self.consumed_mass_encoder = MassEncoder(dim_model)
+            self.remaining_mass_encoder = MassEncoder(dim_model)
+            self.prefix_dropout = nn.Dropout(0.3)
 
         layer = nn.TransformerDecoderLayer(
             d_model=dim_model, nhead=n_head, dim_feedforward=dim_feedforward,
