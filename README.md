@@ -6,7 +6,7 @@ This repository contains inference code for **PhysNovo**.
 
 The overall architecture of PhysNovo.
 
-![model](model.pdf)
+![model](model.png)
 
 ## Requirements
 
